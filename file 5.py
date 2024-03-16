@@ -320,4 +320,52 @@ for val in s1
      space=space+1
 print(space)
 
+# 1.) Python program to capitalize the first and last character of each 
+# word in a string
 
+#--->1st answer
+def capitalize_first_last(string):
+    words = string.split()
+    capitalized_words = []
+    for word in words:
+        if len(word) > 1:
+            capitalized_word = word[0].upper() + word[1:-1] + word[-1].upper()
+        else:
+            capitalized_word = word.upper()
+        capitalized_words.append(capitalized_word)
+    return ' '.join(capitalized_words)
+
+# Example usage:
+input_string = "python program to capitalize"
+result = capitalize_first_last(input_string)
+print(result)  # Output: 'PythoN PrograM tO Capitalize'
+
+# 2.) Input : 128
+# Output : Yes
+# 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0.
+
+#--->2nd answer
+def is_divisible_by_digits(num):
+    digits = [int(digit) for digit in str(num) if digit != '0']
+    for digit in digits:
+        if num % digit != 0:
+            return "No"
+    return "Yes"
+
+# Example usage:
+num = 128
+result = is_divisible_by_digits(num)
+print(result)  # Output: 'Yes'
+
+# 3.)l1=[1,2,3,4], l2=[5,6,7,8]
+# Add both l1 and l2, ans=[6, 8, 10, 12]
+
+#--->3rd answer
+def add_lists(l1, l2):
+    return [x + y for x, y in zip(l1, l2)]
+
+# Example usage:
+l1 = [1, 2, 3, 4]
+l2 = [5, 6, 7, 8]
+result = add_lists(l1, l2)
+print(result)  # Output: [6, 8, 10, 12]
